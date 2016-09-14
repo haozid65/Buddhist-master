@@ -40,6 +40,22 @@
             android:value="57c5300f67e58ec7ab00373f" >
         </meta-data>
 
+        <!-- 微薄-->
+        <activity
+            android:name=".WBShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
         <!-- wechat callback-->
         <activity
             android:name=".wxapi.WXEntryActivity"
