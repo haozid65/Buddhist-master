@@ -46,7 +46,7 @@ public class LoginActivity extends BaseActivity{
         umShareAPI.onActivityResult(requestCode, resultCode, data);
     }
 
-    @OnClick({R.id.weixin_login, R.id.qq_login, R.id.tv_justLook, R.id.tv_register, R.id.tv_emailLogin})
+    @OnClick({R.id.weixin_login, R.id.qq_login, R.id.weibo_login, R.id.tv_justLook, R.id.tv_register, R.id.tv_emailLogin})
     public void doClick(View view) {
         switch (view.getId()) {
             case R.id.tv_justLook:  // 随便看看
@@ -63,7 +63,6 @@ public class LoginActivity extends BaseActivity{
 
             case R.id.weixin_login:
                 toAuthLogin(SHARE_MEDIA.WEIXIN);
-
                 return;
 
             case R.id.qq_login:
@@ -71,6 +70,7 @@ public class LoginActivity extends BaseActivity{
                 return;
             case R.id.weibo_login:
                 toAuthLogin(SHARE_MEDIA.SINA);
+                return;
 
         }
     }
