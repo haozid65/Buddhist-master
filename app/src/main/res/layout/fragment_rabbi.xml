@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.bingoogolapple.refreshlayout.BGARefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rabbi_h_img"
+                android:scaleType="fitXY"
+                />
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:canLoop="true"
+                />
+
+            <include layout="@layout/layout_merit_list" />
+
+            <!--<FrameLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/bg_2">-->
+                <!--<RelativeLayout-->
+                    <!--android:id="@+id/rl_search"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:background="@drawable/search_layout_bg"-->
+                    <!--android:layout_marginLeft="@dimen/padding"-->
+                    <!--android:layout_marginRight="@dimen/padding"-->
+                    <!--android:layout_marginTop="@dimen/padding_s"-->
+                    <!--android:layout_marginBottom="@dimen/padding_s"-->
+                    <!-->-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:drawablePadding="6dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:drawableLeft="@mipmap/search"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:text="搜索寺院、法师"-->
+                        <!--/>-->
+
+                <!--</RelativeLayout>-->
+            <!--</FrameLayout>-->
+
+            <!--<include layout="@layout/layout_temple_home" />-->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding"
+                android:src="@mipmap/tjfs"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding"
+                android:paddingRight="@dimen/padding"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/riv_rabbi1"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_centerHorizontal="true"
+                        app:riv_oval="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_rabbi_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@id/riv_rabbi1"
+                        android:layout_alignBottom="@id/riv_rabbi1"
+                        android:layout_marginRight="@dimen/padding"
+                        android:gravity="center"
+                        android:ems="1"
+                        android:maxEms="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_rabbi_temple_1"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/riv_rabbi1"
+                        android:layout_alignRight="@id/riv_rabbi1"
+                        android:layout_below="@id/riv_rabbi1"
+                        android:layout_marginTop="8dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/riv_rabbi2"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_centerHorizontal="true"
+                        app:riv_oval="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_rabbi_name_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@id/riv_rabbi2"
+                        android:layout_alignBottom="@id/riv_rabbi2"
+                        android:layout_marginRight="@dimen/padding"
+                        android:gravity="center"
+                        android:ems="1"
+                        android:maxEms="1"
+                        />
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_rabbi_temple_2"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/riv_rabbi2"
+                        android:layout_alignRight="@id/riv_rabbi2"
+                        android:layout_below="@id/riv_rabbi2"
+                        android:layout_marginTop="8dp"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</cn.bingoogolapple.refreshlayout.BGARefreshLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textColor="@color/orange"
+        android:id="@+id/tv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/ttl"
+        android:text="活动列表"
+        android:textSize="16sp"
+        android:drawablePadding="@dimen/padding"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding"
+        android:visibility="gone"
+        android:clickable="false"
+        android:focusable="false"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_s"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:scaleType="fitXY"
+            android:layout_marginRight="@dimen/padding_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="中元节地藏超度法会"
+            android:layout_toRightOf="@id/iv_icon"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预报名时间:"
+            android:layout_below="@id/tv_title"
+            android:layout_alignLeft="@id/tv_title"
+            android:drawableLeft="@mipmap/ic_clock"
+            android:drawablePadding="4dp"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_stime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_1"
+            android:layout_alignTop="@id/tv_1"
+            android:layout_alignBottom="@id/tv_1"
+            android:layout_marginLeft="8dp"
+            android:text="开始时间"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_etime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_stime"
+            android:layout_alignRight="@id/tv_stime"
+            android:layout_below="@id/tv_stime"
+            android:text="结束时间"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_1"
+            android:layout_alignRight="@id/tv_1"
+            android:gravity="right"
+            android:layout_below="@id/tv_etime"
+            android:layout_marginTop="8dp"
+            android:text="活动天数:"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_cycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_2"
+            android:layout_alignTop="@id/tv_2"
+            android:layout_alignBottom="@id/tv_2"
+            android:layout_marginLeft="8dp"
+            android:text="1人"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_1"
+            android:layout_alignRight="@id/tv_1"
+            android:gravity="right"
+            android:layout_below="@id/tv_2"
+            android:layout_marginTop="8dp"
+            android:text="参加人数:"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_3"
+            android:layout_alignTop="@id/tv_3"
+            android:layout_alignBottom="@id/tv_3"
+            android:layout_marginLeft="8dp"
+            android:text="1人"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_s"
+            />
+
+        <TextView
+            android:id="@+id/tv_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_s"
+            android:text="已结束"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_count"
+            />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

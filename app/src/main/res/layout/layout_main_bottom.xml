@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:layout_gravity="bottom"
+    android:background="@mipmap/main_bottom_bg"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/rb_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:button="@null"
+        android:checked="true"
+        android:drawableTop="@drawable/main_home_sel"
+        android:gravity="center" />
+
+    <RadioButton
+        android:id="@+id/rb_temple"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:button="@null"
+        android:drawableTop="@drawable/main_temple_sel"
+        android:gravity="center" />
+
+    <RadioButton
+        android:id="@+id/rb_rabbi"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:button="@null"
+        android:drawableTop="@drawable/main_rabbi_sel"
+        android:gravity="center" />
+
+    <RadioButton
+        android:id="@+id/rb_raise"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:button="@null"
+        android:drawableTop="@drawable/main_raise_sel"
+        android:gravity="center" />
+
+    <RadioButton
+        android:id="@+id/rb_activity"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:button="@null"
+        android:drawableTop="@drawable/main_activity_sel"
+        android:gravity="center" />
+
+
+</RadioGroup>

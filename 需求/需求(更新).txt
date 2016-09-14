@@ -1,0 +1,10 @@
+
+	
+	1.	法师模块：http://wx.yywhsh.com/api/master/index?code=yywhsh_code 
+	2.	首页数据：http://wx.yywhsh.com/api/index/index?code=yywhsh_code
+	3.	注册：http://wx.yywhsh.com/login/register 三项参数：userName   pwd   email
+	4.	登录：http://wx.yywhsh.com/login/login    三项参数：userName   pwd   email
+		
+			http://wx.yywhsh.com/api/activity	活动版块(第五个)活动列表接口	
+		
+		
