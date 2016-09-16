@@ -68,7 +68,12 @@ public class H5Activity extends BaseActivity {
 
         String url=getUrl();
 
-        AppUtils.synCookies(this,url, MyApp.getCookieValue());
+        if (MyApp.getCookieValue() == null) { // 移除cookie
+            AppUtils.removeCookie(this);
+        } else {
+            AppUtils.synCookies(this, url, MyApp.getCookieValue());
+        }
+
 
         webView.loadUrl(url);
 

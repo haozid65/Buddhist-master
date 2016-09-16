@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.yywh.buddhist.MyApp;
 import com.yywh.buddhist.R;
 
 import java.util.Map;
@@ -50,6 +51,7 @@ public class LoginActivity extends BaseActivity{
     public void doClick(View view) {
         switch (view.getId()) {
             case R.id.tv_justLook:  // 随便看看
+                MyApp.setCookieValue(null);
                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 return;
 
