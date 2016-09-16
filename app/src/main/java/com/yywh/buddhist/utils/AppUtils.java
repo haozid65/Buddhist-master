@@ -55,7 +55,7 @@ public class AppUtils {
      * 移除cookie
      * @param context
      */
-    private void removeCookie(Context context) {
+    public static void removeCookie(Context context) {
         CookieSyncManager.createInstance(context);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.removeAllCookie();

@@ -1,5 +1,6 @@
 package com.yywh.buddhist.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
@@ -20,12 +22,20 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.yywh.buddhist.MyApp;
 import com.yywh.buddhist.R;
+import com.yywh.buddhist.http.XApi;
+import com.yywh.buddhist.http.XCallback;
+import com.yywh.buddhist.http.pojo.LoginData;
+
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 邮箱登录
@@ -38,6 +48,8 @@ public class LoginEmailActivity extends BaseActivity {
     EditText LoginPwd;
     @BindView(R.id.btn_email_login)
     Button BtnEmailLogin;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,21 +87,30 @@ public class LoginEmailActivity extends BaseActivity {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                // response
-                                Log.d("Response", response);
-                                System.out.println("Response" + response);
-                                Intent intent = new Intent(LoginEmailActivity.this, MainActivity.class);
+                                if (progressDialog != null && progressDialog.isShowing()) progressDialog.dismiss();
 
-                                startActivity(intent);
+
+                                LoginData result = XApi.getRespResult(response, LoginData.class);
+
+                                if (result != null) {
+                                    if (result.getStatu() == 1) {
+                                        // 登录成功
+                                        Intent intent = new Intent(LoginEmailActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(LoginEmailActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(LoginEmailActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
+                                }
 
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                // error
-                                Log.d("Error.Response", error.getMessage());
-                                System.out.println("Error.Response" + error.getMessage());
+                                Toast.makeText(LoginEmailActivity.this, "服务器异常", Toast.LENGTH_SHORT).show();
+                                if (progressDialog != null && progressDialog.isShowing()) progressDialog.dismiss();
                             }
                         }
 
@@ -111,7 +132,7 @@ public class LoginEmailActivity extends BaseActivity {
 
                             Map<String, String> responseHeaders = response.headers;
                             String rawCookies = responseHeaders.get("Set-Cookie");
-                            System.out.println("rawCookies==="+rawCookies);
+                            System.out.println("rawCookies===" + rawCookies);
                             String dataString = new String(response.data, "UTF-8");
                             MyApp.setCookieValue(rawCookies);
                             return Response.success(dataString, HttpHeaderParser.parseCacheHeaders(response));
@@ -122,21 +143,31 @@ public class LoginEmailActivity extends BaseActivity {
                 };
                 mRequestQueue.add(postRequest);
 
+                progressDialog = new ProgressDialog(LoginEmailActivity.this);
+                progressDialog.setMessage("登录中...");
+                progressDialog.show();
             }
 
         });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
+//    @OnClick({R.id.btn_email_login})
+//    public void doClick() {
+//        RequestParams requestParams = new RequestParams("http://wx.yywhsh.com/login/login");
+//        requestParams.addParameter("userName", LoginEmail.getText().toString());
+//        x.http().post(requestParams, new XCallback<String, String>(this) {
+//            @Override
+//            public void onSuccess(String result) {
+//
+//            }
+//
+//            @Override
+//            public String prepare(String rawData) {
+//                return null;
+//            }
+//        });
+//        List headers = requestParams.getHeaders();
+//
+//    }
 
 }
