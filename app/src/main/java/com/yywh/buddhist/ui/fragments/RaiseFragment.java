@@ -1,6 +1,7 @@
 package com.yywh.buddhist.ui.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.yywh.buddhist.http.XApi;
 import com.yywh.buddhist.http.XCallback;
 import com.yywh.buddhist.http.pojo.HomeData;
 import com.yywh.buddhist.http.pojo.RaiseData;
+import com.yywh.buddhist.ui.H5Activity;
 import com.yywh.buddhist.ui.adapter.MeritListAdapter;
 import com.yywh.buddhist.ui.adapter.RaiseAdapter;
 
@@ -33,7 +35,7 @@ import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 /**
- * 活动
+ * 善筹
  */
 public class RaiseFragment extends BaseFragment implements BGARefreshLayout.BGARefreshLayoutDelegate, AdapterView.OnItemClickListener {
 
@@ -158,16 +160,11 @@ public class RaiseFragment extends BaseFragment implements BGARefreshLayout.BGAR
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        position -= 1;
-//        Intent intent = new Intent(getContext(), H5Activity.class);
-//        if (adapter.getItem(position) instanceof ActivityData.ActivityBean) {
-//            intent.putExtra(H5Activity.KEY_ID, ((ActivityData.ActivityBean) adapter.getItem(position)).getAt_id());
-//            intent.putExtra(H5Activity.KEY_TYPE, H5Activity.TYPE_ACTIVITY);
-//        } else {
-//            intent.putExtra(H5Activity.KEY_ID, ((ActivityData.NewsBean) adapter.getItem(position)).getNew_id());
-//            intent.putExtra(H5Activity.KEY_TYPE, H5Activity.TYPE_NEWS);
-//        }
-//        startActivity(intent);
+        position -= 1;
+        Intent intent = new Intent(getContext(), H5Activity.class);
+        intent.putExtra(H5Activity.KEY_ID, adapter.getItem(position).getRa_id());
+        intent.putExtra(H5Activity.KEY_TYPE, H5Activity.TYPE_RAISE);
+        startActivity(intent);
     }
 
     private static class NetworkImageHolderView implements Holder<String> {

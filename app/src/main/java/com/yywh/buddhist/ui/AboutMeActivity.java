@@ -4,6 +4,7 @@ package com.yywh.buddhist.ui;
  * Created by dfds on 2016/9/9.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -96,7 +97,9 @@ public class AboutMeActivity extends Activity implements OnItemClickListener, On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, names[position], Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, H5Activity.class);
+        intent.putExtra(H5Activity.KEY_TYPE, 5 + position);
+        startActivity(intent);
     }
 
 

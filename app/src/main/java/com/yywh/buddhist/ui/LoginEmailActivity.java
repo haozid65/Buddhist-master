@@ -63,6 +63,10 @@ public class LoginEmailActivity extends BaseActivity {
 
     @Override
     protected void init() {
+//        LoginEmail.setText("mmm@mmm.com");
+//        LoginPwd.setText("mmm");
+
+
         BtnEmailLogin.setOnClickListener(new View.OnClickListener() {
             private String password;
             private String email;
